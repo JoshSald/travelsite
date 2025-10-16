@@ -1,3 +1,36 @@
+import { useState, useEffect } from "react";
+import { fetchAmadeus } from "../utils/API";
+import Featured from "../components/Featured";
+
 export default function Attractions() {
-  return <div className="p-4">Attractions Page</div>;
+  const [activities, setActivities] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function getActivities() {
+      try {
+        const data = await fetchAmadeus("shopping/activities", {
+          longitude: 13.405,
+          latitude: 52.52,
+          radius: 850,
+        });
+        setActivities(data.data || []);
+      } catch (err) {
+        console.error("Error:", err.response?.data || err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    getActivities();
+  }, []);
+
+  return (
+    <section className="p-4 bg-slate-200">
+      <div className="container mx-auto">
+        <h2 className="font-semibold text-4xl">Attractions</h2>
+        <Featured data={activities} loading={loading} />
+      </div>
+    </section>
+  );
 }

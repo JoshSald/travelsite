@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import Home from "../pages/Home";
 import Flights from "../pages/Flights";
 import Hotels from "../pages/Hotels";

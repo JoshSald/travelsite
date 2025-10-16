@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
+import Footer from "./components/Footer";
 import {
   Home,
   Flights,
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/flights" element={<Flights />} />
         <Route path="/attractions" element={<Attractions />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   </StrictMode>
 );
