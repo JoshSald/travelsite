@@ -15,7 +15,7 @@ export function Navbar({ logo, links }) {
     <header className="bg-white border-b border-gray-200 relative z-50 py-6 px-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="mx-6 text-3xl font-bold">
-          {logo}
+          <span className="text-sky-700">Travel</span>Site
         </Link>
         <NavigationMenu>
           <NavigationMenuList className="justify-between">
