@@ -14,7 +14,7 @@ export function Navbar({ logo, links }) {
   return (
     <header className="bg-white border-b border-gray-200 relative z-50 py-6 px-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" className="mx-6 text-2xl font-bold">
+        <Link to="/" className="mx-6 text-3xl font-bold">
           {logo}
         </Link>
         <NavigationMenu>
